@@ -44,7 +44,8 @@ function preload() {
     game.load.image('boss', './assets/boss.png');
     game.load.image('deathRay', './assets/death-ray.png');
     game.a4gPlugin = game.plugins.add(A4gPlugin.configure({
-        zone: 58152
+        // Replace with zone ID provided by A4G
+        zone: YOUR_ZONE_ID
     }));
 }
 
