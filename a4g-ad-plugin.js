@@ -29,11 +29,22 @@ var A4gPlugin = (function (Phaser) {
         return getGameContainer(game).offsetHeight;
     }
 
+    function appendExtraParams(url, extraParams) {
+        var extraParamsPairs = [];
+        
+        for (var extraParamName in extraParams) {
+            extraParamsPairs.push(extraParamName + '=' + encodeURIComponent(extraParams[extraParamName]));
+        }
+        
+        return url + (extraParamsPairs.length ? '&' + extraParamsPairs.join('&') : '');
+    }
+    
     function A4gPlugin(game, pluginManager) {
         Phaser.Plugin.call(this, game, pluginManager);
 
         this.adTypes = ['video'];
         this.zone = null;
+        this.extraParams = {};
     }
 
     A4gPlugin.configure = function (config) {
@@ -54,6 +65,10 @@ var A4gPlugin = (function (Phaser) {
 
             if (config.adTypes) {
                 this.adTypes = config.adTypes;
+            }
+            
+            if (config.fallbackZone) {
+                this.extraParams.fajszone = config.fallbackZone;
             }
         };
         preconfiguredPlugin.prototype = Object.create(A4gPlugin.prototype);
@@ -89,7 +104,7 @@ var A4gPlugin = (function (Phaser) {
 
         scriptEl.async = true;
         scriptEl.type = 'text/javascript';
-        scriptEl.src = '//' + this.adEndpoint +
+        scriptEl.src = appendExtraParams('//' + this.adEndpoint +
             '?zoneid=' + (zone || this.zone) +
             '&width=' + getGameWidth(game) +
             '&height=' + getGameHeight(game) +
@@ -100,7 +115,7 @@ var A4gPlugin = (function (Phaser) {
             '&wrapper=' + getGameContainerId(game) +
             '&skipoffset=' + this.skipOffset
             '&autoplay=1' +
-            '&l=' + antiCache;
+            '&l=' + antiCache, this.extraParams);
 
         getGameContainer(game).insertAdjacentElement('afterend', scriptEl);
     };
