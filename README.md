@@ -17,8 +17,8 @@ game.a4gPlugin = game.plugins.add(A4gPlugin.configure({
 Whenever you want to show an ad within your game just call `showAd()` function. 
 Typically game developers call this function on the beginning of the game and between the levels. 
 
-For YOUR_ZONE_ID, please sign-up as a publisher / website at: http://www.a4g.com/#get-contacted
-
+To receive YOUR_ZONE_ID, please sign-up as a publisher / website at: http://www.a4g.com/#get-contacted
+and mention you are signing up for a Phaser HTML5 plugin.
 
 ```
 game.a4gPlugin.showAd();
