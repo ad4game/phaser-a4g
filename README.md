@@ -1,20 +1,25 @@
+This is a Phaser HTML5 framework plugin which allows to integrate both Google Adx and A4G video pre-roll ads into your HTML5 games. 
+
 A4G Demo usage
 ================
 
-This game show how A4G video ad can be integrated into HTML5 framework Phaser game.
+This game show how A4G/ADX video pre-roll ad can be integrated into HTML5 framework Phaser game.
 
 First add `a4g-ad-plugin.js` to your codebase.
 
-Then, everything is needed, just create the A4gPlugin:
+Then create the A4gPlugin:
 
 ```
 game.a4gPlugin = game.plugins.add(A4gPlugin.configure({
         zone: YOUR_ZONE_ID
     }));
 ```
-To receive YOUR_ZONE_ID, please sign-up as a publisher / website at: http://www.a4g.com/#get-contacted
+Whenever you want to show an ad within your game just call `showAd()` function. 
+Typically game developers call this function on the beginning of the game and between the levels. 
 
-And then, when you want to show the ad just call `showAd()` function
+For YOUR_ZONE_ID, please sign-up as a publisher / website at: http://www.a4g.com/#get-contacted
+
+
 ```
 game.a4gPlugin.showAd();
 ```
