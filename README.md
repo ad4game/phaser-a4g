@@ -1,7 +1,7 @@
 A4G Demo usage
 ================
 
-This game show how A4G video ad can be integrated into Phaser game.
+This game show how A4G video ad can be integrated into HTML5 framework Phaser game.
 
 First add `a4g-ad-plugin.js` to your codebase.
 
@@ -32,3 +32,7 @@ Configuration presented as a regular object. Following settings can be provided.
   - `skipOffset` number which indicate when ad can be skipped, default value is `10`
   - `adEndpoint` string optional ad delivery endpoint, might be used for testing purpose, default value is `ads.ad4game.com/www/delivery/video.php` 
 - `A4gPlugin.prototype.showAd()` shows a4g ad
+
+See for references:
+* http://phaser.io/
+* https://github.com/photonstorm/phaser
