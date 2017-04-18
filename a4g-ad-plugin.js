@@ -1,7 +1,4 @@
 var A4gPlugin = (function (Phaser) {
-    var TEST_AD_ENDPOINT = 'dev01.ad4game.com/www/delivery_dev',
-        PROD_AD_ENDPOINT = 'ads.ad4game.com/www/delivery';
-
     function optionalRemove(tagId) {
         var el = document.getElementById(tagId);
 
@@ -47,8 +44,8 @@ var A4gPlugin = (function (Phaser) {
                 this.zone = config.zone;
             }
 
-            if (config.env === 'dev') {
-                this.testMode = true;
+            if (config.adEndpoint) {
+                this.adEndpoint = config.adEndpoint;
             }
 
             if (config.skipOffset) {
@@ -65,7 +62,7 @@ var A4gPlugin = (function (Phaser) {
 
     A4gPlugin.prototype = Object.create(Phaser.Plugin.prototype);
 
-    A4gPlugin.prototype.testMode = false;
+    A4gPlugin.prototype.adEndpoint = 'ads.ad4game.com/www/delivery/video.php';
     A4gPlugin.prototype.skipOffset = 10;
 
     A4gPlugin.prototype.showAd = function (zone) {
@@ -92,8 +89,7 @@ var A4gPlugin = (function (Phaser) {
 
         scriptEl.async = true;
         scriptEl.type = 'text/javascript';
-        scriptEl.src = '//' + (this.testMode ? TEST_AD_ENDPOINT : PROD_AD_ENDPOINT) +
-            '/video.php' +
+        scriptEl.src = '//' + this.adEndpoint +
             '?zoneid=' + (zone || this.zone) +
             '&width=' + getGameWidth(game) +
             '&height=' + getGameHeight(game) +
