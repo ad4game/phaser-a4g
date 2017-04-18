@@ -36,6 +36,7 @@ Configuration presented as a regular object. Following settings can be provided.
   - `adTypes` array of ad types that can be showed. Available values are ['video', 'skippablevideo', 'text', 'image'], default value is `['video']`
   - `skipOffset` number which indicate when ad can be skipped, default value is `10`
   - `adEndpoint` string optional ad delivery endpoint, might be used for testing purpose, default value is `ads.ad4game.com/www/delivery/video.php` 
+  - `fallbackZone` zone id which would be used in case if video cannot be loaded, by default not set
 - `A4gPlugin.prototype.showAd()` shows a4g ad
 
 See for references:
