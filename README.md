@@ -12,11 +12,15 @@ game.a4gPlugin = game.plugins.add(A4gPlugin.configure({
         zone: YOUR_ZONE_ID
     }));
 ```
+To receive YOUR_ZONE_ID, please sign-up as a publisher / website at: http://www.a4g.com/#get-contacted
+
 And then, when you want to show the ad just call `showAd()` function
 ```
 game.a4gPlugin.showAd();
 ```
 That's it!
+
+See demo page with this example code here: http://xmmorpg.com/phaser-a4g/
 
 A4g Phaser Plugin API
 =====================
