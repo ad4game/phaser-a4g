@@ -113,7 +113,7 @@ var A4gPlugin = (function (Phaser) {
             '&disableflash=1' +
             '&siteurl=' + location.href +
             '&wrapper=' + getGameContainerId(game) +
-            '&skipoffset=' + this.skipOffset
+            '&skipoffset=' + this.skipOffset + 
             '&autoplay=1' +
             '&l=' + antiCache, this.extraParams);
 
