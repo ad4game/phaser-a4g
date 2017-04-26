@@ -2,9 +2,9 @@ This is a Phaser HTML5 framework plugin to integrate both Google Adx and A4G vid
 
 Why we've created it and the target audience:
 * We love games, especially the HTML5 flavour.
-* All of our HTML5 publishers who tried video pre-roll generated higher revenues than using any other types of ads.
 * We have created this plugin to help our existing and future customers monetise their Phaser games.
-* Why AdX and not Adsense? Adx is paid by CPM and in an overhelming majority of cases using Adx should generate better profits.
+* All of our HTML5 publishers, who tried video pre-roll, generated higher revenues.
+* Why AdX and not Adsense? Adx is paid by CPM and should generate better profits.
 
 A4G Demo usage
 ================
@@ -28,10 +28,10 @@ Typically game developers call this function on the beginning of the game and be
 game.a4gPlugin.showAd();
 ```
 
-In order to integrate this plugin you will need `YOUR_ZONE_ID`. Unless you are already our customer please sign-up as a publisher / website at: http://www.a4g.com/#get-contacted
-and mention you are signing up for a Phaser HTML5 game.
+In order to integrate this plugin you will need `YOUR_ZONE_ID`. Unless you are an existing customer, please sign-up as a publisher / website at: http://www.a4g.com/#get-contacted
+Pleas add a message saying that you are signing up for a Phaser HTML5 game.
 
-Note: Adx has few requirements to join up but we will help you to smooth up this process and set you up with a Google AdX account.
+Note: Adx has rigorous requirements to join. We will help you with the set-up process to make it as smooth as possible.
 
 A4g Phaser Plugin API
 =====================
@@ -44,7 +44,7 @@ Configuration is a regular JavaScript object, which can take following settings:
   * `fallbackZone` zone id which could be used in case the video cannot be loaded, by default not set. In case the Adx ad will not be loaded we will load a replacement ad with a lower CPM.
   * `adEndpoint` string (optional) ad delivery endpoint, might be used for testing purpose, default value is `ads.ad4game.com/www/delivery/video.php` 
 * `A4gPlugin.prototype.showAd()` shows a4g ad
-* You can fully control the styling of the div showing the ad. Our publishers often display games in an iframe, which autoscale to 100%.
+* You can fully control the styling of the div showing the ad. Our publishers often display games in an iframe, which autoscales to 100%.
 
 References:
 * http://phaser.io/
