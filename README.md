@@ -1,6 +1,6 @@
 This is a Phaser HTML5 framework plugin to integrate both Google Adx and A4G video pre-roll ads into your HTML5 games.
 
-Why we've created it and a target audience:
+Why we've created it and the target audience:
 * We love games, especially the HTML5 flavour.
 * All of our HTML5 publishers who tried video pre-roll generated higher revenues than using any other types of ads.
 * We have created this plugin to help our existing and future customers monetise their Phaser games.
