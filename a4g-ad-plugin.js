@@ -1,4 +1,6 @@
 var A4gPlugin = (function (Phaser) {
+    var sessionId = 1;
+
     function optionalRemove(tagId) {
         var el = document.getElementById(tagId);
 
@@ -45,6 +47,8 @@ var A4gPlugin = (function (Phaser) {
         this.adTypes = ['video'];
         this.zone = null;
         this.extraParams = {};
+        this.onAdShown = new Phaser.Signal();
+        this.onAdComplete = new Phaser.Signal();
     }
 
     A4gPlugin.configure = function (config) {
@@ -66,9 +70,21 @@ var A4gPlugin = (function (Phaser) {
             if (config.adTypes) {
                 this.adTypes = config.adTypes;
             }
-            
+
             if (config.fallbackZone) {
                 this.extraParams.fajszone = config.fallbackZone;
+            }
+
+            if (config.timeout) {
+                this.timeout = config.timeout;
+            }
+
+            if (config.pauseGame) {
+                this.pauseGame = config.pauseGame;
+            }
+
+            if (config.unpauseGameDelay) {
+                this.unpauseGameDelay = config.unpauseGameDelay;
             }
         };
         preconfiguredPlugin.prototype = Object.create(A4gPlugin.prototype);
@@ -78,23 +94,41 @@ var A4gPlugin = (function (Phaser) {
     A4gPlugin.prototype = Object.create(Phaser.Plugin.prototype);
 
     A4gPlugin.prototype.adEndpoint = 'ads.ad4game.com/www/delivery/video.php';
+    A4gPlugin.prototype.onAdShown = null;
+    A4gPlugin.prototype.onAdComplete = null;
+    A4gPlugin.prototype.pauseGame = true;
+    A4gPlugin.prototype.unpauseGameDelay = 500;
+    A4gPlugin.prototype.timeout = 35000;
     A4gPlugin.prototype.skipOffset = 10;
 
     A4gPlugin.prototype.showAd = function (zone) {
         var scriptEl = document.createElement('SCRIPT'),
             antiCache = Math.round(Math.random() * 100000),
             game = this.game,
-            callbackFn = 'a4gcb' + Math.round(Math.random() * 100000),
+            callbackFn = '__A4GCB' + Math.round(Math.random() * 100000),
+            currentSessionId = sessionId++,
             tid,
+            pauseGame = this.pauseGame,
+            unpauseGameDelay = this.unpauseGameDelay,
             registeredCallback = function () {
-                setTimeout(function () {
-                    game.paused = false;
-                }, 500);
+                this.onAdComplete.dispatch(currentSessionId);
+
+                if (pauseGame) {
+                    setTimeout(function () {
+                        game.paused = false;
+                    }, unpauseGameDelay);
+                }
+
                 clearTimeout(tid);
                 window[callbackFn] = function () {};
             };
-        tid = setTimeout(registeredCallback, 30000)
-        game.paused = true;
+
+        this.onAdShown.dispatch(currentSessionId);
+        tid = setTimeout(registeredCallback, this.timeout);
+
+        if (pauseGame) {
+            game.paused = true;
+        }
 
         optionalRemove('A4Gwrap');
         optionalRemove('a4gpreloader');
