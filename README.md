@@ -32,6 +32,14 @@ In order to integrate this plugin you will need `YOUR_ZONE_ID`. Unless you are a
 
 Note: Adx has rigorous requirements to join. We will help you with the set-up process to make it as smooth as possible.
 
+NPM
+=====================
+
+You can get the lates NPM from here: https://www.npmjs.com/package/@ad4game/phaser-a4g
+```
+npm install @ad4game/phaser-a4g --save-dev
+```
+
 A4g Phaser Plugin API
 =====================
 
