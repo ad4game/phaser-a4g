@@ -5,10 +5,16 @@
   <meta charset="utf-8">
   <title>Phaser.js game demo</title>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/phaser/2.6.1/phaser.min.js" type="text/javascript"></script>
-  <script src="a4g-ad-plugin.js" type="text/javascript"></script>
-  <script src="game.js" type="text/javascript"></script>
+  <script src="../a4g-ad-plugin.js" type="text/javascript"></script>
+  <script src="../game.js" type="text/javascript"></script>
 </head>
 <body>
   <div id="phaser-demo"></div>
+  <script>
+      game.a4gPlugin = game.plugins.add(A4gPlugin.configure({
+          zone: 56291
+      }));
+      game.a4gPlugin.showAd();
+  </script>
 </body>
 </html>
