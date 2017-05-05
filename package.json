@@ -1,0 +1,24 @@
+{
+  "name": "@ad4game/phaser-a4g",
+  "version": "1.0.0",
+  "description": "Phaser A4G plugin which simplify ad integration into phaser games",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ad4game/phaser-a4g.git"
+  },
+  "keywords": [
+    "phaser",
+    "a4g",
+    "ad"
+  ],
+  "author": "Ad4Game",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ad4game/phaser-a4g/issues"
+  },
+  "homepage": "https://github.com/ad4game/phaser-a4g#readme",
+  "dependencies": {
+    "phaser": "^2.6.2"
+  }
+}

@@ -1,4 +1,12 @@
-var A4gPlugin = (function (Phaser) {
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['phaser'], factory);
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require('phaser'));
+    } else {
+        root.A4gPlugin = factory(root.Phaser);
+    }
+}(this, function (Phaser) {
     var sessionId = 1;
 
     function optionalRemove(tagId) {
@@ -33,14 +41,14 @@ var A4gPlugin = (function (Phaser) {
 
     function appendExtraParams(url, extraParams) {
         var extraParamsPairs = [];
-        
+
         for (var extraParamName in extraParams) {
             extraParamsPairs.push(extraParamName + '=' + encodeURIComponent(extraParams[extraParamName]));
         }
-        
+
         return url + (extraParamsPairs.length ? '&' + extraParamsPairs.join('&') : '');
     }
-    
+
     function A4gPlugin(game, pluginManager) {
         Phaser.Plugin.call(this, game, pluginManager);
 
@@ -110,8 +118,9 @@ var A4gPlugin = (function (Phaser) {
             tid,
             pauseGame = this.pauseGame,
             unpauseGameDelay = this.unpauseGameDelay,
+            onAdComplete = this.onAdComplete,
             registeredCallback = function () {
-                this.onAdComplete.dispatch(currentSessionId);
+                onAdComplete.dispatch(currentSessionId);
 
                 if (pauseGame) {
                     setTimeout(function () {
@@ -147,7 +156,7 @@ var A4gPlugin = (function (Phaser) {
             '&disableflash=1' +
             '&siteurl=' + location.href +
             '&wrapper=' + getGameContainerId(game) +
-            '&skipoffset=' + this.skipOffset + 
+            '&skipoffset=' + this.skipOffset +
             '&autoplay=1' +
             '&l=' + antiCache, this.extraParams);
 
@@ -155,4 +164,4 @@ var A4gPlugin = (function (Phaser) {
     };
 
     return A4gPlugin;
-} (window.Phaser));
+}));
