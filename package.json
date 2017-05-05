@@ -1,24 +1,39 @@
 {
   "name": "@ad4game/phaser-a4g",
-  "version": "1.0.0",
-  "description": "Phaser A4G plugin which simplify ad integration into phaser games",
-  "main": "index.js",
+  "author": "Ad4Game",
+  "version": "1.0.2",
+  "description": "This is a Phaser HTML5 framework plugin to integrate both Google Adx and A4G video pre-roll ads into your HTML5 games.",
+  "contributors": [
+    {
+      "name": "Radek Maciaszek",
+      "email": "radek@a4g.com"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ad4game/phaser-a4g.git"
+    "url": "git@github.com:ad4game/phaser-a4g.git"
   },
   "keywords": [
     "phaser",
     "a4g",
     "ad"
   ],
-  "author": "Ad4Game",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ad4game/phaser-a4g/issues"
-  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/ad4game/phaser-a4g/raw/master/LICENSE"
+    }
+  ],
+  "bugs": [
+    {
+      "url": "https://github.com/ad4game/phaser-a4g/issues"
+    }
+  ],
   "homepage": "https://github.com/ad4game/phaser-a4g#readme",
-  "dependencies": {
+  "config": {
+    "name": "phaser-a4g"
+  },
+  "devDependencies": {
     "phaser": "^2.6.2"
   }
 }
