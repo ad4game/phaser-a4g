@@ -3,6 +3,7 @@
   "author": "Ad4Game",
   "version": "1.0.2",
   "description": "This is a Phaser HTML5 framework plugin to integrate both Google Adx and A4G video pre-roll ads into your HTML5 games.",
+  "main": "index.js",
   "contributors": [
     {
       "name": "Radek Maciaszek",
