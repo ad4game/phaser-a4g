@@ -1,0 +1,1 @@
+module.exports = require('./a4g-ad-plugin');

@@ -13,6 +13,11 @@
     "type": "git",
     "url": "git@github.com:ad4game/phaser-a4g.git"
   },
+  "keywords": [
+    "phaser",
+    "a4g",
+    "ad"
+  ],
   "licenses": [
     {
       "type": "MIT",
@@ -24,10 +29,11 @@
       "url": "https://github.com/ad4game/phaser-a4g/issues"
     }
   ],
+  "homepage": "https://github.com/ad4game/phaser-a4g#readme",
   "config": {
     "name": "phaser-a4g"
   },
   "devDependencies": {
-    "phaser": "2.6.2"
+    "phaser": "^2.6.2"
   }
 }
