@@ -35,7 +35,7 @@ Note: Adx has rigorous requirements to join. We will help you with the set-up pr
 NPM
 =====================
 
-You can get the lates NPM from here: https://www.npmjs.com/package/@ad4game/phaser-a4g
+You can get the latest NPM from here: https://www.npmjs.com/package/@ad4game/phaser-a4g
 ```
 npm install @ad4game/phaser-a4g --save-dev
 ```
