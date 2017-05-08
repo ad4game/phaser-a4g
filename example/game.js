@@ -347,6 +347,22 @@ function create() {
     gameOver.x = gameOver.x - gameOver.textWidth / 2;
     gameOver.y = gameOver.y - gameOver.textHeight / 3;
     gameOver.visible = false;
+
+    game.a4gPlugin.onAdShown.add(function () {
+        try {
+            console.log('Ad has been showed');
+        } catch (e) {}
+    });
+    game.a4gPlugin.onAdComplete.add(function () {
+        setTimeout(function () {
+            game.a4gPlugin.showAd();
+        }, 10000);
+
+        try {
+            console.log('Ad has been completed');
+        } catch (e) {}
+    });
+
     game.a4gPlugin.showAd();
 }
 
