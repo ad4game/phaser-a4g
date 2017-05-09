@@ -356,7 +356,7 @@ function create() {
     game.a4gPlugin.onAdComplete.add(function () {
         setTimeout(function () {
             game.a4gPlugin.showAd();
-        }, 10000);
+        }, 60000);
 
         try {
             console.log('Ad has been completed');

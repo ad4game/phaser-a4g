@@ -7,7 +7,6 @@ declare module 'src/a4g-ad-plugin' {
         skipOffset: number;
         adTypes: string[];
         fallbackZone: number;
-        timeout: number;
         pauseGame: boolean;
         unpauseGameDelay: number;
     }
@@ -21,7 +20,6 @@ declare module 'src/a4g-ad-plugin' {
         adEndpoint: string;
         pauseGame: boolean;
         unpauseGameDelay: number;
-        timeout: number;
         skipOffset: number;
 
         constructor(game: Phaser.Game, pluginManager: Phaser.PluginManager);

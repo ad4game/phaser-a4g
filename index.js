@@ -1,1 +1,1 @@
-module.exports = require('./a4g-ad-plugin');
+module.exports = require('./src/a4g-ad-plugin');
