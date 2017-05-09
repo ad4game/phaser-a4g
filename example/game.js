@@ -353,6 +353,7 @@ function create() {
             console.log('Ad has been showed');
         } catch (e) {}
     });
+    
     game.a4gPlugin.onAdComplete.add(function () {
         setTimeout(function () {
             game.a4gPlugin.showAd();
