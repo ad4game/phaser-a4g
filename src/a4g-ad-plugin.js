@@ -68,7 +68,15 @@
             }
 
             if (config.adEndpoint) {
-                this.adEndpoint = config.adEndpoint;
+                this.adEndpoint = config.adEndpoi
+85
+​
+86
+            if (config.timeout) {
+87
+                this.timeout = config.timeout;
+88
+            }nt;
             }
 
             if (config.skipOffset) {
@@ -81,10 +89,6 @@
 
             if (config.fallbackZone) {
                 this.extraParams.fajszone = config.fallbackZone;
-            }
-
-            if (config.timeout) {
-                this.timeout = config.timeout;
             }
 
             if (config.pauseGame) {
@@ -106,7 +110,6 @@
     A4gPlugin.prototype.onAdComplete = null;
     A4gPlugin.prototype.pauseGame = true;
     A4gPlugin.prototype.unpauseGameDelay = 500;
-    A4gPlugin.prototype.timeout = 35000;
     A4gPlugin.prototype.skipOffset = 10;
 
     A4gPlugin.prototype.showAd = function (zone) {
@@ -115,11 +118,12 @@
             game = this.game,
             callbackFn = '__A4GCB' + Math.round(Math.random() * 100000),
             currentSessionId = sessionId++,
-            tid,
             pauseGame = this.pauseGame,
             unpauseGameDelay = this.unpauseGameDelay,
             onAdComplete = this.onAdComplete,
             registeredCallback = function () {
+                clearTimeout(tid);
+                
                 onAdComplete.dispatch(currentSessionId);
 
                 if (pauseGame) {
@@ -128,12 +132,11 @@
                     }, unpauseGameDelay);
                 }
 
-                clearTimeout(tid);
+                
                 window[callbackFn] = function () {};
             };
 
         this.onAdShown.dispatch(currentSessionId);
-        tid = setTimeout(registeredCallback, this.timeout);
 
         if (pauseGame) {
             game.paused = true;
