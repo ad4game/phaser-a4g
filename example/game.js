@@ -350,7 +350,7 @@ function create() {
 
     game.a4gPlugin.onAdShown.add(function () {
         try {
-            console.log('Ad has been showed');
+            console.log('Ad has been shown');
         } catch (e) {}
     });
     
