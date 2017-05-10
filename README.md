@@ -51,7 +51,7 @@ A4g Phaser Plugin API
 * `A4gPlugin.configure(config)` creates preconfigured A4gPhaser plugin. It takes 1 parameter, configuration.
 Configuration is a regular JavaScript object, which can take following settings:
   * `zone` zone id from A4g (required)
-  * `adTypes` array of ad types that can be displayed. Available values are `['video', 'skippablevideo', 'standardvideo', 'text', 'image']`, default value is `['video']` which is equivalent to `standardvideo_skippablevideo`, see required params / ad_type for more info: https://support.google.com/adsense/answer/3112148
+  * `adTypes` array of ad types that can be displayed. Available values are `['video', 'skippablevideo', 'standardvideo', 'bumpervideo', 'text', 'image']`, default value is `['video']` which is equivalent to [`standardvideo', 'bumpervideo', 'skippablevideo`], see required params / ad_type for more info: https://support.google.com/adsense/answer/3112148
   * `skipOffset` number of seconds when ad can be skipped, default value is `10`
   * `fallbackZone` zone id which could be used in case the video cannot be loaded, by default not set. In case the Adx ad will not be loaded we will load a replacement ad (usually with a lower CPM). This could be useful if Adx fills a very small percentage of requests.
   * `pauseGame` boolean indicates if game should be paused while ad is shown, default value is true
