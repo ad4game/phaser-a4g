@@ -64,3 +64,4 @@ Configuration is a regular JavaScript object, which can take following settings:
 References:
 * http://phaser.io/
 * https://github.com/photonstorm/phaser
+* http://phaser.io/news/2017/05/a4g-plugin
