@@ -52,7 +52,7 @@
     function A4gPlugin(game, pluginManager) {
         Phaser.Plugin.call(this, game, pluginManager);
 
-        this.adTypes = ['video'];
+        this.adTypes = ['skippablevideo'];
         this.zone = null;
         this.extraParams = {};
         this.onAdShown = new Phaser.Signal();
