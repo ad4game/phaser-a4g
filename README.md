@@ -10,7 +10,7 @@ A4G Demo usage
 ================
 
 The game from this github repository shows how a video pre-roll ad can be integrated into HTML5 framework Phaser game. 
-See a working demo showing a video pre-roll and inter-game ad each 60 seconds: http://a4g.com/demo/phaser
+See a working demo showing a video pre-roll and inter-game ad each 60 seconds: http://xmmorpg.com/phaser-a4g/example/
 
 Integration steps:
 * First include `a4g-ad-plugin.js` into your codebase.
